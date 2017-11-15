@@ -4,10 +4,13 @@ module.exports = {
   root: true,
   parser: 'babel-eslint',
   parserOptions: {
-    sourceType: 'module'
+    ecmaVersion: 6,
+    sourceType: 'module',
   },
   env: {
     browser: true,
+    'commonjs': true,
+    'es6': true,
   },
   // https://github.com/standard/standard/blob/master/docs/RULES-en.md
   extends: 'standard',
@@ -22,6 +25,17 @@ module.exports = {
     // allow async-await
     'generator-star-spacing': 0,
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
+    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
+    'quotes': [
+      'error',
+      'single'
+    ],
+    'semi': [
+      'error',
+      'always'
+    ],
+    'space-before-function-paren': 0,
+    'comma-dangle': 0,
+    'no-new': 0
   }
 }
