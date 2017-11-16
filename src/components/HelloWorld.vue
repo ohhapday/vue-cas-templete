@@ -2,8 +2,11 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
-    <router-link to="/foo">Go to Foo</router-link>
-    <router-link to="/bar">Go to Bar</router-link>
+    <p>
+      <router-link to="/">Go to Root</router-link>
+      <router-link to="/user/foo">Go to Fooa</router-link>
+      <router-link to="/user/bar">Go to Bara</router-link>
+    </p>
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
       <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
@@ -19,16 +22,25 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
-    <router-view></router-view>
+    <div class="user">
+      <h1>{{ $route.params.id }}</h1>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
   export default {
     name: 'HelloWorld',
+    watch: {
+      '$route'(to, from) {
+        console.log(to);
+        console.log(from);
+      }
+    },
     data: function () {
       return {
-        msg: 'Welcome to Your Vue.js App111',
+        msg: 'Welcome to Your Vue.js App',
       };
     }
   };
