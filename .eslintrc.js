@@ -18,8 +18,12 @@ module.exports = {
   plugins: [
     'html'
   ],
+  globals: {
+    "$": true,
+    "jQuery": true
+  },
   // add your custom rules here
-  'rules': {
+  rules: {
     // allow paren-less arrow functions
     'arrow-parens': 0,
     // allow async-await
@@ -36,6 +40,7 @@ module.exports = {
     ],
     'space-before-function-paren': 0,
     'comma-dangle': 0,
-    'no-new': 0
+    'no-new': 0,
+    'import/no-webpack-loader-syntax': 0,
   }
 }

@@ -9,7 +9,7 @@ const UserHome = {template: '<div>Home</div>'};
 const UserProfile = {template: '<div>Profile</div>'};
 const UserPosts = {template: '<div>Posts</div>'};
 
-export default new VueRouter({
+const router = new VueRouter({
   mode: 'history',
   routes: [
     {
@@ -35,3 +35,5 @@ export default new VueRouter({
     }
   ]
 });
+
+export default router;
