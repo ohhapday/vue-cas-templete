@@ -18,6 +18,9 @@
           $(event.target).button('reset');
         }, 1000);
       }
+    },
+    created: function() {
+      console.log(this);
     }
   };
 </script>
