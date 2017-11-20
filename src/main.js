@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 Vue.config.productionTip = false;
 
 router.push({
-  name: 'user', params: { userId: 123 }
+  name: 'user', params: {userId: 123}
 });
 
 new Vue({
