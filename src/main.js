@@ -11,6 +11,8 @@ router.push({
   name: 'user', params: {userId: 123}
 });
 
+console.log(process.env);
+
 new Vue({
   el: '#root',
   router,
