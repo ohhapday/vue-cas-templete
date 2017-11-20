@@ -4,5 +4,5 @@ const prodEnv = require('./prod.env');
 
 module.exports = merge(prodEnv, {
   NODE_ENV: '"development"',
-  PUBLIC_URL: ''
+  PUBLIC_URL: '"http://103.1.1.201"'
 });
