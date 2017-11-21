@@ -1,37 +1,48 @@
+<!-- /**
+ * Created by WebStorm.
+ * User: 서정석
+ * Date: 2017/11/20
+ * Time: 오후 1:52
+ *
+ */ -->
+
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <button type="button" class="btn btn-primary" autocomplate="off"
-            data-loading-text="jquery with bootstrap" @click="clickBtn">버튼</button>
-      <router-view></router-view>
+    <div class="wrapper">
+      <layout-header></layout-header>
+      <layout-aside></layout-aside>
+    </div>
+    <!--
+    <select name="sch_is_complete" id="sch_is_complete" class="form-control input-sm select2" data-column="3" title="">
+      <option value="" disabled>전체</option>
+      <option value="0">진행</option>
+      <option value="1">완료</option>
+    </select>
+    -->
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'jQueryApp',
-    methods: {
-      clickBtn(event) {
-        $(event.target).button('loading');
+  import layoutHeader from './components/Layout/Header.vue';
+  import layoutAside from './components/Layout/Aside.vue';
+  import 'select2';
 
-        setTimeout(function () {
-          $(event.target).button('reset');
-        }, 1000);
-      }
+  export default {
+    components: {
+      'layout-header': layoutHeader,
+      'layout-aside': layoutAside
     },
-    created: function() {
-      console.log(this);
+    mounted: function () {
+      $('select').select2();
     }
   };
 </script>
 
+<style src="select2/dist/css/select2.min.css"></style>
+
 <style>
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
+  a:focus, a:hover {
+    color: #23527c;
+    text-decoration: none;
   }
 </style>
