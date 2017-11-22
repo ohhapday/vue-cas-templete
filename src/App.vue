@@ -9,40 +9,44 @@
 <template>
   <div id="app">
     <div class="wrapper">
-      <layout-header></layout-header>
-      <layout-aside></layout-aside>
+      <va-navibar></va-navibar>
+      <va-slider :slideMenuItems="slideMenuItems"></va-slider>
+      <div style="height: 1000px;"></div>
     </div>
-    <!--
-    <select name="sch_is_complete" id="sch_is_complete" class="form-control input-sm select2" data-column="3" title="">
-      <option value="" disabled>전체</option>
-      <option value="0">진행</option>
-      <option value="1">완료</option>
-    </select>
-    -->
   </div>
 </template>
 
 <script>
-  import layoutHeader from './components/Layout/Header.vue';
-  import layoutAside from './components/Layout/Aside.vue';
-  import 'select2';
+  import VANaviBar from './components/NaviBar.vue';
+  import VASlider from './components/Slider.vue';
+  import store from './vuex/store.js';
+  import slideMenuItems from './lib/slideMenuItems.js';
 
   export default {
-    components: {
-      'layout-header': layoutHeader,
-      'layout-aside': layoutAside
+    name: 'app',
+    data() {
+      return {
+        slideMenuItems: slideMenuItems
+      };
     },
-    mounted: function () {
-      $('select').select2();
-    }
+    components: {
+      'va-navibar': VANaviBar,
+      'va-slider': VASlider,
+    },
+    store
   };
 </script>
 
-<style src="select2/dist/css/select2.min.css"></style>
-
 <style>
-  a:focus, a:hover {
-    color: #23527c;
-    text-decoration: none;
+  body::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 10px;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    border: 2px solid #fff;
+    background-color: rgba(0, 0, 0, .3);
   }
 </style>

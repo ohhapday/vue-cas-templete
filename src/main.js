@@ -1,19 +1,21 @@
+import './lib/css';
+import './lib/script';
+import './lib/global';
+
 import Vue from 'vue';
 import App from './App';
 import router from './router';
 
-// import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 Vue.config.productionTip = false;
 
-router.push({
-  // name: 'user', params: {userId: 123}
-});
-
 new Vue({
-  el: '#root',
+  el: '#app',
   router,
   template: '<app/>',
-  components: {App},
+  components: {
+    App
+  },
+  mounted() {
+    console.log($('button'));
+  },
 });
