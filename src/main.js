@@ -16,6 +16,6 @@ new Vue({
     App
   },
   mounted() {
-    console.log($('button'));
+    // console.log($('button'));
   },
 });

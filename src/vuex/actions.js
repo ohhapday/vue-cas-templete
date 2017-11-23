@@ -12,3 +12,11 @@ export const fetchProduct = ({commit}) => {
       console.error(error);
     });
 };
+
+/**
+ * 테스트용
+ * @param commit
+ */
+export const changeName = ({commit}) => {
+  commit('changeName');
+};

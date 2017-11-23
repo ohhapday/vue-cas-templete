@@ -41,16 +41,15 @@
         >
         </va-slide-item>
       </ul>
+      <button>버튼</button>
     </section>
     <!-- /.sidebar -->
   </aside>
 </template>
 
 <script>
-  import {mapGetters} from 'vuex';
+  import {mapGetters, mapActions} from 'vuex';
   import VASlideItem from './VASlideItem';
-
-  console.log(mapGetters);
 
   export default {
     name: 'va-slider',
@@ -65,11 +64,29 @@
     },
     computed: {
       ...mapGetters([
-        'currentUser'
+        'unreadMessagesCount',
+        'unreadNotificationsCount',
+        'remainTasksCount',
+        'currentUser',
+        'totalProduct'
       ])
     },
     components: {
       'va-slide-item': VASlideItem
-    }
+    },
+    methods: {
+      ...mapActions([
+        'changeName'
+      ])
+    },
+    mounted() {
+      let self = this;
+      $('button').on('click', function () {
+        console.log(self);
+        self.changeName();
+      });
+
+      console.log(this.$store);
+    },
   };
 </script>

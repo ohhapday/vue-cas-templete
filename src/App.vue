@@ -33,7 +33,12 @@
       'va-navibar': VANaviBar,
       'va-slider': VASlider,
     },
-    store
+    store,
+    /* mounted() {
+      $('button').on('click', function () {
+        store.dispatch('changeName');
+      });
+    }, */
   };
 </script>
 

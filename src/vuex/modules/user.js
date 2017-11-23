@@ -11,7 +11,13 @@ const state = {
 };
 
 const mutations = {
-
+  /**
+   * 테스트용
+   * @param state
+   */
+  changeName: function (state) {
+    state.main.name = (state.main.name === 'Alexander Pierce') ? '서정석' : 'Alexander Pierce';
+  }
 };
 
 export default {
