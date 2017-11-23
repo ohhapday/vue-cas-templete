@@ -5,7 +5,7 @@ const webpack = require('webpack');     // jquery를 로드하기 위해 webpack
 const config = require('../config');
 const vueLoaderConfig = require('./vue-loader.conf');
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
