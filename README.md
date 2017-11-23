@@ -1,4 +1,4 @@
-# vue-first
+# vue-cas-templete
 
 > A Vue.js project
 
