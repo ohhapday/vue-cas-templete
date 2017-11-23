@@ -6,7 +6,8 @@
  */
 
 import Vue from 'vue';
-import Row from '../grid/Row';
-import Column from '../grid/Column';
+import Row from '../grid/Row.vue';
+import Column from '../grid/Column.vue';
+
 Vue.component('row', Row);
 Vue.component('column', Column);
