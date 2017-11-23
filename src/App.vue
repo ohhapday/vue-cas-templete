@@ -11,16 +11,18 @@
     <div class="wrapper">
       <va-navibar></va-navibar>
       <va-slider :slideMenuItems="slideMenuItems"></va-slider>
-      <div style="height: 1000px;"></div>
+      <va-content-wrap style="height: 500px;"></va-content-wrap>
     </div>
   </div>
 </template>
 
 <script>
-  import VANaviBar from './components/NaviBar.vue';
-  import VASlider from './components/Slider.vue';
   import store from './vuex/store.js';
   import slideMenuItems from './lib/slideMenuItems.js';
+
+  import VANaviBar from './components/NaviBar.vue';
+  import VASlider from './components/Slider.vue';
+  import VAContentWrap from './ContentWrap.vue';
 
   export default {
     name: 'app',
@@ -32,6 +34,7 @@
     components: {
       'va-navibar': VANaviBar,
       'va-slider': VASlider,
+      'va-content-wrap': VAContentWrap,
     },
     store,
     /* mounted() {
