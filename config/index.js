@@ -1,15 +1,14 @@
-'use strict'
+'use strict';
 // Template version: 1.2.1
 // see http://vuejs-templates.github.io/webpack for documentation.
 
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   dev: {
 
     // Paths
     assetsSubDirectory: 'static',
-    // assetsPublicPath: '/',
     assetsPublicPath: '/',
     proxyTable: {},
 
@@ -56,7 +55,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../../01. CasWare_2016/build/'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: './',
+    assetsPublicPath: '/build/',
 
     /**
      * Source Maps
@@ -79,4 +78,4 @@ module.exports = {
     // Set to `true` or `false` to always turn it on or off
     bundleAnalyzerReport: process.env.npm_config_report
   }
-}
+};
