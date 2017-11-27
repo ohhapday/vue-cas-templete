@@ -6,7 +6,7 @@
  */ -->
 
 <template>
-	<div id="content-wrap" class="content-wrapper">
+  <div id="content-wrap" class="content-wrapper">
     <section class="content-header">
       <h1>
         Dashboard
@@ -21,45 +21,24 @@
     <button @click="show = !show">Toggle</button>
 
     <section>
-      <transition name="page" mode="out-in">
+      <transition name="custom-classes-transition"
+                  enter-active-class="animated zoomIn"
+                  leave-active-class="animated zoomOut">
         <p v-if="show">hello</p>
       </transition>
     </section>
-	</div>
+  </div>
 </template>
 
 <script>
+  import 'animate.css';
+
   export default {
     name: '',
-    extends: {},
     data() {
       return {
         show: true,
       };
     },
-    /*
-    props: {
-      bar: {},
-      foo: {}
-    },
-    data() {},
-    */
-    computed: {},
-    components: {},
-    watch: {},
-    methods: {},
-    beforeCreate() {
-    },
-    mounted() {
-    },
   };
 </script>
-
-<style>
-  .page-enter-active, .page-leave-active {
-    transition: opacity 0.5s, transform 0.5s;
-  }
-  .page-enter, .page-leave-to {
-    opacity: 0;
-  }
-</style>
