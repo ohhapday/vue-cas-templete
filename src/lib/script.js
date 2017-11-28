@@ -10,6 +10,6 @@ import 'bootstrap';
 /**
  * My-Product 파일
  */
-// import 'jquery-ui/ui/widgets/sortable';
-// import 'jquery-ui/ui/widgets/datepicker';
+import 'jquery-ui/ui/widgets/sortable';
+import 'jquery-ui/ui/widgets/datepicker';
 import 'admin-lte';
