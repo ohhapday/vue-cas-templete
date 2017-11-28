@@ -13,7 +13,7 @@ module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
     app: './src/main.js',
-    // app2: './src/main.js',
+    // app2: './src/main.js',   // main.js가 두개일경우 admin-lte 미작동
   },
   output: {
     path: config.build.assetsRoot,
