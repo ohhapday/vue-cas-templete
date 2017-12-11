@@ -3,7 +3,8 @@
     <a href="#">
       <i :class="icon"></i> <span>{{ name }}</span>
       <span class="pull-right-container" v-show="badge">
-        <small class="label pull-right" :class="[badge.type==='String'?'bg-green':'label-primary']">{{ badge.data }}</small>
+        <small class="label pull-right"
+               :class="[badge.type==='String'?'bg-green':'label-primary']">{{ badge.data }}</small>
       </span>
     </a>
   </router-link>
@@ -12,12 +13,14 @@
     <a href="#" v-if="!isHeader">
       <i :class="icon"></i> <span>{{ name }}</span>
       <span class="pull-right-container">
-        <small v-if="badge && badge.data" class="label pull-right" :class="[badge.type==='String'?'bg-green':'label-primary']">{{ badge.data }}</small>
+        <small v-if="badge && badge.data" class="label pull-right"
+               :class="[badge.type==='String'?'bg-green':'label-primary']">{{ badge.data }}</small>
         <i v-else class="fa fa-angle-left pull-right"></i>
       </span>
     </a>
     <ul class="treeview-menu" v-if="items.length > 0">
-      <router-link tag="li" v-for="(item,index) in items" :data="item" :key="index" :to="item.router" v-if="item.router && item.router.name">
+      <router-link tag="li" v-for="(item,index) in items" :data="item" :key="index" :to="item.router"
+                   v-if="item.router && item.router.name">
         <a>
           <i :class="item.icon"> {{ item.name }}</i>
         </a>
@@ -52,19 +55,19 @@
       },
       badge: {
         type: Object,
-        default () {
+        default() {
           return {};
         }
       },
       items: {
         type: Array,
-        default () {
+        default() {
           return [];
         }
       },
       router: {
         type: Object,
-        default () {
+        default() {
           return {
             name: ''
           };
@@ -75,11 +78,11 @@
         default: ''
       }
     },
-    created () {
+    created() {
 
     },
     computed: {
-      getType () {
+      getType() {
         if (this.isHeader) {
           return 'header';
         }
